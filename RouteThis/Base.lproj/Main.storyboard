@@ -22,12 +22,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXu-m9-qkt" userLabel="informationView">
                                         <rect key="frame" x="0.0" y="411" width="414" height="485"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="an6-dv-ozw">
-                                                <rect key="frame" x="157" y="335" width="100" height="100"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="an6-dv-ozw" customClass="SSSpinnerButton" customModule="SSSpinnerButton">
+                                                <rect key="frame" x="172" y="335" width="70" height="70"/>
                                                 <color key="backgroundColor" red="0.13333333333333333" green="0.21176470588235294" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="RX0-xQ-Vbj"/>
-                                                    <constraint firstAttribute="height" constant="100" id="Xld-TT-YWG"/>
+                                                    <constraint firstAttribute="width" constant="70" id="RX0-xQ-Vbj"/>
+                                                    <constraint firstAttribute="height" constant="70" id="Xld-TT-YWG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="START">
@@ -154,7 +154,7 @@
                                         <constraints>
                                             <constraint firstItem="sXw-oj-6CF" firstAttribute="top" secondItem="KXu-m9-qkt" secondAttribute="top" id="1yv-ZT-1vL"/>
                                             <constraint firstItem="an6-dv-ozw" firstAttribute="centerX" secondItem="Gjh-sH-s0j" secondAttribute="centerX" id="3sB-6O-oWM"/>
-                                            <constraint firstAttribute="bottom" secondItem="an6-dv-ozw" secondAttribute="bottom" constant="50" id="4tU-cL-UNy"/>
+                                            <constraint firstAttribute="bottom" secondItem="an6-dv-ozw" secondAttribute="bottom" constant="80" id="4tU-cL-UNy"/>
                                             <constraint firstAttribute="height" constant="485" id="LEj-QW-w6c"/>
                                             <constraint firstItem="EFR-xP-vON" firstAttribute="top" secondItem="sXw-oj-6CF" secondAttribute="bottom" constant="8" symbolic="YES" id="SFu-UN-66t"/>
                                             <constraint firstItem="an6-dv-ozw" firstAttribute="top" secondItem="Gjh-sH-s0j" secondAttribute="bottom" constant="21" id="TVJ-Ta-8WT"/>
@@ -188,8 +188,9 @@
                     </view>
                     <connections>
                         <outlet property="downloadSpeedLabel" destination="aAr-0X-DwF" id="lTU-Ff-AMR"/>
+                        <outlet property="informationView" destination="KXu-m9-qkt" id="vJC-d1-c5r"/>
                         <outlet property="speedCountingLabel" destination="GXW-5G-tdv" id="WdY-jR-zIr"/>
-                        <outlet property="startBtn" destination="an6-dv-ozw" id="A6z-sB-7xH"/>
+                        <outlet property="startBtn" destination="an6-dv-ozw" id="Q9K-P0-3Mj"/>
                         <outlet property="uploadSpeedLabel" destination="aUp-7Z-cnd" id="zqZ-dM-z5O"/>
                     </connections>
                 </viewController>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2463A6114EC8E76D90277889 /* Pods_RouteThis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DF59AEFEBA802614070E75 /* Pods_RouteThis.framework */; };
 		F310AFD62583018B00B1B8FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F310AFD52583018B00B1B8FC /* AppDelegate.swift */; };
 		F310AFD82583018B00B1B8FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F310AFD72583018B00B1B8FC /* SceneDelegate.swift */; };
 		F310AFDA2583018B00B1B8FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F310AFD92583018B00B1B8FC /* ViewController.swift */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2663026579B5EE95AA31B734 /* Pods-RouteThis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouteThis.debug.xcconfig"; path = "Target Support Files/Pods-RouteThis/Pods-RouteThis.debug.xcconfig"; sourceTree = "<group>"; };
+		A94F1B7974C11D0AA0FFCB38 /* Pods-RouteThis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouteThis.release.xcconfig"; path = "Target Support Files/Pods-RouteThis/Pods-RouteThis.release.xcconfig"; sourceTree = "<group>"; };
+		D2DF59AEFEBA802614070E75 /* Pods_RouteThis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouteThis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F310AFD22583018B00B1B8FC /* RouteThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F310AFD52583018B00B1B8FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F310AFD72583018B00B1B8FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2463A6114EC8E76D90277889 /* Pods_RouteThis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		276385FFB519E12F3EABB008 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2663026579B5EE95AA31B734 /* Pods-RouteThis.debug.xcconfig */,
+				A94F1B7974C11D0AA0FFCB38 /* Pods-RouteThis.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C97E87A40DEEA45A889989F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2DF59AEFEBA802614070E75 /* Pods_RouteThis.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F310AFC92583018B00B1B8FC = {
 			isa = PBXGroup;
 			children = (
 				F310AFD42583018B00B1B8FC /* RouteThis */,
 				F310AFD32583018B00B1B8FC /* Products */,
+				276385FFB519E12F3EABB008 /* Pods */,
+				C97E87A40DEEA45A889989F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F310AFE62583019000B1B8FC /* Build configuration list for PBXNativeTarget "RouteThis" */;
 			buildPhases = (
+				8896A1CB715FF17E3B8FAA80 /* [CP] Check Pods Manifest.lock */,
 				F310AFCE2583018B00B1B8FC /* Sources */,
 				F310AFCF2583018B00B1B8FC /* Frameworks */,
 				F310AFD02583018B00B1B8FC /* Resources */,
+				13DC2C5233465E529C983CD1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,6 +175,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13DC2C5233465E529C983CD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RouteThis/Pods-RouteThis-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RouteThis/Pods-RouteThis-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RouteThis/Pods-RouteThis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8896A1CB715FF17E3B8FAA80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RouteThis-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F310AFCE2583018B00B1B8FC /* Sources */ = {
@@ -303,6 +372,7 @@
 		};
 		F310AFE72583019000B1B8FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2663026579B5EE95AA31B734 /* Pods-RouteThis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,6 +392,7 @@
 		};
 		F310AFE82583019000B1B8FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A94F1B7974C11D0AA0FFCB38 /* Pods-RouteThis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
