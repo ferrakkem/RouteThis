@@ -7,7 +7,15 @@
 
 import UIKit
 
-class RoundedRectButton: UIButton {
+public enum RouteThisAnimationEdge {
+  case none
+  case top
+  case bottom
+  case left
+  case right
+}
+
+class CustomButton: UIButton {
 
     func customBtn(userBtn: UIButton){
         userBtn.layer.shadowColor = UIColor.white.cgColor
@@ -16,15 +24,5 @@ class RoundedRectButton: UIButton {
         userBtn.layer.masksToBounds = false
         userBtn.layer.cornerRadius = userBtn.frame.size.height/2
         userBtn.layer.borderWidth = 0.5
-    }
-}
-
-class CustomLabel: UILabel {
-    func customLabel(userLabel: UILabel){
-        userLabel.layer.shadowColor = UIColor.gray.cgColor
-        userLabel.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        userLabel.layer.shadowOpacity = 2.0
-        userLabel.layer.masksToBounds = true
-        userLabel.layer.cornerRadius = 6.0
     }
 }

@@ -14,7 +14,8 @@
 		F310AFDF2583019000B1B8FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F310AFDE2583019000B1B8FC /* Assets.xcassets */; };
 		F310AFE22583019000B1B8FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F310AFE02583019000B1B8FC /* LaunchScreen.storyboard */; };
 		F36EB6102587409D00334D17 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EB60D2587409D00334D17 /* CustomView.swift */; };
-		F36EB6112587409D00334D17 /* RoundedRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EB60E2587409D00334D17 /* RoundedRectButton.swift */; };
+		F36EB6112587409D00334D17 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EB60E2587409D00334D17 /* CustomButton.swift */; };
+		F3871C202589A40B000DA809 /* LabelCustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3871C1F2589A40A000DA809 /* LabelCustomAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		F310AFE12583019000B1B8FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F310AFE32583019000B1B8FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F36EB60D2587409D00334D17 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
-		F36EB60E2587409D00334D17 /* RoundedRectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedRectButton.swift; sourceTree = "<group>"; };
+		F36EB60E2587409D00334D17 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		F3871C1F2589A40A000DA809 /* LabelCustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCustomAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				F36EB60D2587409D00334D17 /* CustomView.swift */,
-				F36EB60E2587409D00334D17 /* RoundedRectButton.swift */,
+				F36EB60E2587409D00334D17 /* CustomButton.swift */,
+				F3871C1F2589A40A000DA809 /* LabelCustomAnimation.swift */,
 			);
 			path = Uitilities;
 			sourceTree = "<group>";
@@ -153,7 +156,8 @@
 			files = (
 				F310AFDA2583018B00B1B8FC /* ViewController.swift in Sources */,
 				F36EB6102587409D00334D17 /* CustomView.swift in Sources */,
-				F36EB6112587409D00334D17 /* RoundedRectButton.swift in Sources */,
+				F3871C202589A40B000DA809 /* LabelCustomAnimation.swift in Sources */,
+				F36EB6112587409D00334D17 /* CustomButton.swift in Sources */,
 				F310AFD62583018B00B1B8FC /* AppDelegate.swift in Sources */,
 				F310AFD82583018B00B1B8FC /* SceneDelegate.swift in Sources */,
 			);
