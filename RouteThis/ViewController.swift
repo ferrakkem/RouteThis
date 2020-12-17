@@ -7,13 +7,14 @@
 
 import UIKit
 import SSSpinnerButton
+import StarWars
+
 
 class ViewController: UIViewController {
     
     var customButton = CustomButton()
-    
     @IBOutlet weak var informationView: UIView!
-    
+        
     @IBOutlet weak var speedCountingLabel: UILabel!
     @IBOutlet weak var downloadSpeedLabel: UILabel!
     @IBOutlet weak var uploadSpeedLabel: UILabel!
@@ -25,12 +26,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         customButton.customBtn(userBtn: startBtn)
-        
     }
     
     //MARK: - Strat speed counting
     func incrementLabel(to endValue: Int) {
         //self.informationView.fadeIn()
+        //viewOutAnimation()
+        
+    
+        informationView.animOut()
+        
         let duration: Double = 5.0 //seconds
         DispatchQueue.global().async {
             for i in 0 ..< (endValue + 1) {
@@ -58,9 +63,11 @@ class ViewController: UIViewController {
         animation.duration = 0.50
         self.downloadSpeedLabel.layer.add(animation, forKey: CATransitionType.push.rawValue)//2.
         self.uploadSpeedLabel.layer.add(animation, forKey:CATransitionType.push.rawValue)
+        //viewInAnimation()
         
+        informationView.animback()
         // Enable Start button after update download and upload label value
-        //informationView.fadeOut()
+
 
     }
     
@@ -90,5 +97,33 @@ class ViewController: UIViewController {
 
     }
     
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return StarWarsGLAnimator()
+    }
 }
 
+extension UIView{
+    func animOut(){
+        print("animOut")
+        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseOut],
+                       animations: {
+                        self.bounds.origin.y = self.bounds.origin.y - self.frame.height/2
+                       
+                        self.layoutIfNeeded()
+        }, completion: nil)
+        self.isHidden = false
+    }
+    
+    func animback(){
+        print("animback")
+        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseIn],
+                       animations: {
+                        self.bounds.origin.y = 0
+                        self.layoutIfNeeded()
+
+        },  completion: {(_ completed: Bool) -> Void in
+        self.isHidden = false
+            })
+    }
+    
+}

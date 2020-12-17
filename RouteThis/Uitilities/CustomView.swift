@@ -9,7 +9,6 @@ import UIKit
 
 class CustomView: UIView {
     
-    
     func customView(userview: UIView){
         userview.layer.shadowColor = UIColor.gray.cgColor
         userview.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
