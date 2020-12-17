@@ -7,7 +7,7 @@
 
 import UIKit
 import SSSpinnerButton
-import StarWars
+//import StarWars
 
 
 class ViewController: UIViewController {
@@ -21,21 +21,24 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var startBtn: SSSpinnerButton!
     
+    @IBOutlet weak var downloadArrowImage: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //downloadArrowImage.isHidden = true
+        
         // Do any additional setup after loading the view.
         customButton.customBtn(userBtn: startBtn)
+                
     }
     
     //MARK: - Strat speed counting
     func incrementLabel(to endValue: Int) {
-        //self.informationView.fadeIn()
-        //viewOutAnimation()
-        
     
         informationView.animOut()
-        
         let duration: Double = 5.0 //seconds
         DispatchQueue.global().async {
             for i in 0 ..< (endValue + 1) {
@@ -52,21 +55,20 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    //MARK: - Update speed label text
     func updateLabelText(downloadSpeed: Float, uploaddSpeed: Float){
         let animation:CATransition = CATransition()
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.type = CATransitionType.push
-        animation.subtype = CATransitionSubtype.fromBottom //1. CATransitionType
+        animation.subtype = CATransitionSubtype.fromBottom
         downloadSpeedLabel.text = String(downloadSpeed)
         uploadSpeedLabel.text = String(uploaddSpeed)
         animation.duration = 0.50
         self.downloadSpeedLabel.layer.add(animation, forKey: CATransitionType.push.rawValue)//2.
         self.uploadSpeedLabel.layer.add(animation, forKey:CATransitionType.push.rawValue)
-        //viewInAnimation()
-        
+     
         informationView.animback()
-        // Enable Start button after update download and upload label value
+ 
 
 
     }
@@ -78,7 +80,9 @@ class ViewController: UIViewController {
         startBtnAnimation()
     }
     
+    //MARK: - Button chasing animation
     func startBtnAnimation(){
+        //downloadArrowImage.isHidden = false
         startBtn.startAnimate(spinnerType: SpinnerType.ballRotateChase, spinnercolor: UIColor.white, spinnerSize: 40, complete: {
             // Your code here
             self.customButton.flash()
@@ -90,21 +94,17 @@ class ViewController: UIViewController {
         })
     }
     
+    //MARK: - Stop chasing animation
     func stopBtnAnimation(){
         startBtn.stopAnimate {
             self.startBtn.isEnabled = true
         }
 
     }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return StarWarsGLAnimator()
-    }
 }
 
 extension UIView{
     func animOut(){
-        print("animOut")
         UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseOut],
                        animations: {
                         self.bounds.origin.y = self.bounds.origin.y - self.frame.height/2
@@ -115,7 +115,6 @@ extension UIView{
     }
     
     func animback(){
-        print("animback")
         UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseIn],
                        animations: {
                         self.bounds.origin.y = 0
