@@ -31,14 +31,15 @@ class StarsOverlay: UIView {
     fileprivate var particle: CAEmitterCell!
     
     func setup() {
+        
         emitter.emitterMode = CAEmitterLayerEmitterMode.outline
         emitter.emitterShape = CAEmitterLayerEmitterShape.circle
         emitter.renderMode = CAEmitterLayerRenderMode.oldestFirst
         emitter.preservesDepth = true
         
         particle = CAEmitterCell()
-        
-        particle.contents = UIImage(named: "spark")!.cgImage
+
+        particle.contents = UIImage(named: "spark_2")!.cgImage
         particle.birthRate = 10
         
         particle.lifetime = 50
