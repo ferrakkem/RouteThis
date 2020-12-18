@@ -19,6 +19,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ScV-L9-bg7" userLabel="mainView" customClass="StarsOverlay" customModule="RouteThis" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJl-CH-RhD" userLabel="comInfoView">
+                                        <rect key="frame" x="4" y="750" width="406" height="585"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXu-m9-qkt" userLabel="informationView">
                                         <rect key="frame" x="0.0" y="471" width="414" height="425"/>
                                         <subviews>

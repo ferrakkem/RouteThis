@@ -79,7 +79,6 @@ class ViewController: UIViewController {
     func startBtnAnimation(){
         //downloadArrowImage.isHidden = false
         startBtn.startAnimate(spinnerType: SpinnerType.ballRotateChase, spinnercolor: UIColor.white, spinnerSize: 40, complete: {
-            self.customButton.flash()
             self.downloadSpeedLabel.text = "-"
             self.uploadSpeedLabel.text = "-"
             self.dowloadingSpeedMessaure(to: 200)
@@ -100,39 +99,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
-extension UIView{
-    func animOut(){
-        UIView.animate(withDuration: 2, delay: 1, options: [.curveEaseOut],
-                       animations: {
-                        self.bounds.origin.y = self.bounds.origin.y - self.frame.height/2
-                        
-                        self.layoutIfNeeded()
-                       }, completion: nil)
-        self.isHidden = false
-    }
-    
-    func animIn(){
-        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseIn],
-                       animations: {
-                        self.bounds.origin.y = 0
-                        self.layoutIfNeeded()
-                        
-                       },  completion: {(_ completed: Bool) -> Void in
-                        self.isHidden = false
-                       })
-    }
-}
-
-extension UILabel{
-    func updateLabel(speed: Float, labelName: UILabel){
-        let animation:CATransition = CATransition()
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        animation.type = CATransitionType.push
-        animation.subtype = CATransitionSubtype.fromBottom
-        labelName.text = String(speed)
-        animation.duration = 0.50
-        labelName.layer.add(animation, forKey: CATransitionType.push.rawValue)//2.
-    }
-}
-
