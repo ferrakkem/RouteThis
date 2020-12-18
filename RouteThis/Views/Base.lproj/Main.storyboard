@@ -202,6 +202,7 @@
                         <outlet property="downloadSpeedLabel" destination="aAr-0X-DwF" id="lTU-Ff-AMR"/>
                         <outlet property="informationView" destination="KXu-m9-qkt" id="vJC-d1-c5r"/>
                         <outlet property="speedCountingLabel" destination="GXW-5G-tdv" id="WdY-jR-zIr"/>
+                        <outlet property="speedTestGrapView" destination="JJl-CH-RhD" id="tc2-l7-pgL"/>
                         <outlet property="startBtn" destination="an6-dv-ozw" id="Q9K-P0-3Mj"/>
                         <outlet property="uploadSpeedLabel" destination="aUp-7Z-cnd" id="zqZ-dM-z5O"/>
                     </connections>

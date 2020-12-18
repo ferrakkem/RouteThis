@@ -5,15 +5,15 @@
 //  Created by Ferrakkem Bhuiyan on 2020-12-10.
 //
 
+//self.speedTestGrapView.frame = CGRect(x: 0, y: 0, width: K.iPhoneScreen.screenWidth, height: K.iPhoneScreen.screenHeight)
+
 import UIKit
 import SSSpinnerButton
-
 
 class ViewController: UIViewController {
     
     var customButton = CustomButton()
     @IBOutlet weak var informationView: UIView!
-    
     
     @IBOutlet weak var speedCountingLabel: UILabel!
     @IBOutlet weak var downloadSpeedLabel: UILabel!
@@ -21,13 +21,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var startBtn: SSSpinnerButton!
     @IBOutlet weak var arrowImage: UIImageView!
     
-    @IBOutlet weak var test: UILabel!
+    @IBOutlet weak var speedTestGrapView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         customButton.customBtn(userBtn: startBtn)
         arrowImage.isHidden = true
-        
         
     }
     
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     
     //MARK: - Strat Uploading Speed Messaure
     func uploadLoadinSpeedMessaure(to endValue: Int) {
-        let duration: Double = 1.0 //seconds
+        let duration: Double = 3.0 //seconds
         DispatchQueue.global().async {
             for i in stride(from: endValue, to: 64, by: -1) {
                 let sleepTime = UInt32(duration/Double(endValue) * 1000000.0)
@@ -63,8 +63,9 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.speedCountingLabel.text = "\(Float(i))"
                     self.uploadSpeedLabel.updateLabel(speed: 64.0, labelName: self.uploadSpeedLabel)
-                    self.informationView.animIn()
-                    self.arrowImage.isHidden = true
+                    if i == 65{
+                        self.informationView.animIn()
+                    }
                 }
             }
         }
@@ -86,7 +87,7 @@ class ViewController: UIViewController {
             self.arrowImage.isHidden = false
             self.arrowImage.image = UIImage(systemName: K.imageNameForCheckingDownloadSpeed)
             self.arrowImage.tintColor  = K.BandColors.imageTintColorDuringDownloadSpeed
-            
+
             self.startBtn.isEnabled = false
             
         })

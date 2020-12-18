@@ -17,6 +17,12 @@ struct K{
         static let imageTintColorDuringUpSpeed = UIColor(hexaString: "#674982")
         static let backGroundColor = UIColor(hexaString: "#192B37")
     }
+    
+    struct iPhoneScreen {
+        static let screenSize = UIScreen.main.bounds
+        static let screenWidth = screenSize.width
+        static let screenHeight = screenSize.height
+    }
 }
 
 
