@@ -14,26 +14,37 @@ class ViewController: UIViewController {
     
     var customButton = CustomButton()
     @IBOutlet weak var informationView: UIView!
+    @IBOutlet weak var ping: UILabel!
     
     @IBOutlet weak var speedCountingLabel: UILabel!
     @IBOutlet weak var downloadSpeedLabel: UILabel!
     @IBOutlet weak var uploadSpeedLabel: UILabel!
     @IBOutlet weak var startBtn: SSSpinnerButton!
     @IBOutlet weak var arrowImage: UIImageView!
-    
     @IBOutlet weak var speedTestGrapView: UIView!
+    
+    @IBOutlet weak var topSpeedCountingView: UIView!
+    
+    @IBOutlet weak var pingInfoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         customButton.customBtn(userBtn: startBtn)
         arrowImage.isHidden = true
         
+        ping.isHidden = true
+        
     }
+    
     
     //MARK: - Strat dowloading Speed Messaure
     func dowloadingSpeedMessaure(to endValue: Int) {
         informationView.animOut()
+        //pingInfoView.nanimOut()
+        ping.isHidden = false
+        pingInfoView.move()
+        //pingInfoView.tanimOut()
+        
         let duration: Double = 3.0 //seconds
         DispatchQueue.global().async {
             for i in 0 ..< (endValue + 1) {
@@ -42,7 +53,7 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.speedCountingLabel.text = "\(Float(i))"
                     if i == endValue{
-                        self.downloadSpeedLabel.updateLabel(speed: 200.0, labelName: self.downloadSpeedLabel)
+                        self.downloadSpeedLabel.updateLabel(speed: 200.02, labelName: self.downloadSpeedLabel)
                         self.arrowImage.tintColor  = K.BandColors.imageTintColorDuringUpSpeed
                         self.arrowImage.image = UIImage(systemName: K.imageNameForCheckingUploadSpeed)
                         self.stopBtnAnimation()
@@ -55,16 +66,18 @@ class ViewController: UIViewController {
     
     //MARK: - Strat Uploading Speed Messaure
     func uploadLoadinSpeedMessaure(to endValue: Int) {
-        let duration: Double = 3.0 //seconds
+        let duration: Double = 2.0 //seconds
         DispatchQueue.global().async {
             for i in stride(from: endValue, to: 64, by: -1) {
                 let sleepTime = UInt32(duration/Double(endValue) * 1000000.0)
                 usleep(sleepTime)
                 DispatchQueue.main.async {
                     self.speedCountingLabel.text = "\(Float(i))"
-                    self.uploadSpeedLabel.updateLabel(speed: 64.0, labelName: self.uploadSpeedLabel)
                     if i == 65{
+                        self.uploadSpeedLabel.updateLabel(speed: 65.00, labelName: self.uploadSpeedLabel)
                         self.informationView.animIn()
+                        self.pingInfoView.moveback()
+                        self.arrowImage.isHidden = true
                     }
                 }
             }
@@ -87,7 +100,6 @@ class ViewController: UIViewController {
             self.arrowImage.isHidden = false
             self.arrowImage.image = UIImage(systemName: K.imageNameForCheckingDownloadSpeed)
             self.arrowImage.tintColor  = K.BandColors.imageTintColorDuringDownloadSpeed
-
             self.startBtn.isEnabled = false
             
         })

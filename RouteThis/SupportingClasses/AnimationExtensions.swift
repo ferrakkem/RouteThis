@@ -29,7 +29,23 @@ extension UIView{
                         self.isHidden = false
                        })
     }
+    
+    
+    func move() {
+      UIView.animate(withDuration: 2, delay: 1, options: [.curveEaseOut],
+                     animations: {
+                        self.frame.origin.y = self.bounds.height + 10
+      }, completion: nil)
+    }
+    
+    func moveback() {
+      UIView.animate(withDuration: 2, delay: 1, options: [.curveEaseOut],
+                     animations: {
+                        self.frame.origin.y = 0
+      }, completion: nil)
+    }
 }
+
 
 extension UILabel{
     func updateLabel(speed: Float, labelName: UILabel){
@@ -42,3 +58,5 @@ extension UILabel{
         labelName.layer.add(animation, forKey: CATransitionType.push.rawValue)//2.
     }
 }
+
+

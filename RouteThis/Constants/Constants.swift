@@ -23,6 +23,7 @@ struct K{
         static let screenWidth = screenSize.width
         static let screenHeight = screenSize.height
     }
+    
 }
 
 
@@ -33,4 +34,13 @@ extension UIColor {
                   green: .init(strtoul(String(chars[2...3]),nil,16))/255,
                   blue:  .init(strtoul(String(chars[4...5]),nil,16))/255,
                   alpha: alpha)}
+}
+
+
+extension UINavigationController {
+  static public func navBarHeight() -> CGFloat {
+    let nVc = UINavigationController(rootViewController: UIViewController(nibName: nil, bundle: nil))
+    let navBarHeight = nVc.navigationBar.frame.size.height
+    return navBarHeight
+  }
 }
