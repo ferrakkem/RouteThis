@@ -16,7 +16,7 @@ public enum RouteThisAnimationEdge {
 }
 
 class CustomButton: UIButton {
-
+    
     func customBtn(userBtn: UIButton){
         userBtn.layer.shadowColor = UIColor.white.cgColor
         userBtn.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
@@ -25,20 +25,5 @@ class CustomButton: UIButton {
         userBtn.layer.cornerRadius = userBtn.frame.size.height/2
         userBtn.layer.borderWidth = 0.5
     }
-    
-    
-    func flash() {
-       let flash = CABasicAnimation(keyPath: "opacity")
-       flash.duration = 0.5
-       flash.fromValue = 1
-       flash.toValue = 0.1
-        flash.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-       flash.autoreverses = true
-       flash.repeatCount = 3
-       layer.add(flash, forKey: nil)
-     }
-    
 }
-
-
 
