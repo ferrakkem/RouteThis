@@ -15,6 +15,7 @@
 		F310AFDF2583019000B1B8FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F310AFDE2583019000B1B8FC /* Assets.xcassets */; };
 		F310AFE22583019000B1B8FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F310AFE02583019000B1B8FC /* LaunchScreen.storyboard */; };
 		F32B0FBE258AEC1F00086866 /* StarsOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B0FBD258AEC1F00086866 /* StarsOverlay.swift */; };
+		F3613A3E258BEEAA00D4C908 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3613A3D258BEEAA00D4C908 /* Constants.swift */; };
 		F36EB6102587409D00334D17 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EB60D2587409D00334D17 /* CustomView.swift */; };
 		F36EB6112587409D00334D17 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EB60E2587409D00334D17 /* CustomButton.swift */; };
 		F3871C202589A40B000DA809 /* LabelCustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3871C1F2589A40A000DA809 /* LabelCustomAnimation.swift */; };
@@ -33,6 +34,7 @@
 		F310AFE12583019000B1B8FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F310AFE32583019000B1B8FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F32B0FBD258AEC1F00086866 /* StarsOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarsOverlay.swift; sourceTree = "<group>"; };
+		F3613A3D258BEEAA00D4C908 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F36EB60D2587409D00334D17 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F36EB60E2587409D00334D17 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F3871C1F2589A40A000DA809 /* LabelCustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCustomAnimation.swift; sourceTree = "<group>"; };
@@ -88,27 +90,52 @@
 		F310AFD42583018B00B1B8FC /* RouteThis */ = {
 			isa = PBXGroup;
 			children = (
-				F32B0FBD258AEC1F00086866 /* StarsOverlay.swift */,
 				F310AFD52583018B00B1B8FC /* AppDelegate.swift */,
 				F310AFD72583018B00B1B8FC /* SceneDelegate.swift */,
-				F310AFD92583018B00B1B8FC /* ViewController.swift */,
-				F310AFDB2583018B00B1B8FC /* Main.storyboard */,
+				F37FEE66258B0FF500693EE1 /* Views */,
 				F310AFDE2583019000B1B8FC /* Assets.xcassets */,
 				F310AFE02583019000B1B8FC /* LaunchScreen.storyboard */,
 				F310AFE32583019000B1B8FC /* Info.plist */,
-				F36EB60C2587409D00334D17 /* Uitilities */,
+				F3613A40258BEEC700D4C908 /* Constants */,
+				F37FEE64258B0FDC00693EE1 /* StarsAnimation */,
+				F36EB60C2587409D00334D17 /* SupportingClasses */,
 			);
 			path = RouteThis;
 			sourceTree = "<group>";
 		};
-		F36EB60C2587409D00334D17 /* Uitilities */ = {
+		F3613A40258BEEC700D4C908 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F3613A3D258BEEAA00D4C908 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F36EB60C2587409D00334D17 /* SupportingClasses */ = {
 			isa = PBXGroup;
 			children = (
 				F36EB60D2587409D00334D17 /* CustomView.swift */,
 				F36EB60E2587409D00334D17 /* CustomButton.swift */,
 				F3871C1F2589A40A000DA809 /* LabelCustomAnimation.swift */,
 			);
-			path = Uitilities;
+			path = SupportingClasses;
+			sourceTree = "<group>";
+		};
+		F37FEE64258B0FDC00693EE1 /* StarsAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				F32B0FBD258AEC1F00086866 /* StarsOverlay.swift */,
+			);
+			path = StarsAnimation;
+			sourceTree = "<group>";
+		};
+		F37FEE66258B0FF500693EE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F310AFD92583018B00B1B8FC /* ViewController.swift */,
+				F310AFDB2583018B00B1B8FC /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +259,7 @@
 				F36EB6112587409D00334D17 /* CustomButton.swift in Sources */,
 				F310AFD62583018B00B1B8FC /* AppDelegate.swift in Sources */,
 				F310AFD82583018B00B1B8FC /* SceneDelegate.swift in Sources */,
+				F3613A3E258BEEAA00D4C908 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
