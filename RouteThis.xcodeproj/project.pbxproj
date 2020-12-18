@@ -17,6 +17,7 @@
 		F32B0FBE258AEC1F00086866 /* StarsOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B0FBD258AEC1F00086866 /* StarsOverlay.swift */; };
 		F3613A3E258BEEAA00D4C908 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3613A3D258BEEAA00D4C908 /* Constants.swift */; };
 		F3613A47258C594400D4C908 /* AnimationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3613A46258C594400D4C908 /* AnimationExtensions.swift */; };
+		F3613A50258C8C0000D4C908 /* UIView+Ripple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3613A4F258C8C0000D4C908 /* UIView+Ripple.swift */; };
 		F36EB6102587409D00334D17 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EB60D2587409D00334D17 /* CustomView.swift */; };
 		F36EB6112587409D00334D17 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36EB60E2587409D00334D17 /* CustomButton.swift */; };
 		F3871C202589A40B000DA809 /* LabelCustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3871C1F2589A40A000DA809 /* LabelCustomAnimation.swift */; };
@@ -37,6 +38,7 @@
 		F32B0FBD258AEC1F00086866 /* StarsOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarsOverlay.swift; sourceTree = "<group>"; };
 		F3613A3D258BEEAA00D4C908 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F3613A46258C594400D4C908 /* AnimationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExtensions.swift; sourceTree = "<group>"; };
+		F3613A4F258C8C0000D4C908 /* UIView+Ripple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ripple.swift"; sourceTree = "<group>"; };
 		F36EB60D2587409D00334D17 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F36EB60E2587409D00334D17 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F3871C1F2589A40A000DA809 /* LabelCustomAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCustomAnimation.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				F36EB60E2587409D00334D17 /* CustomButton.swift */,
 				F3871C1F2589A40A000DA809 /* LabelCustomAnimation.swift */,
 				F3613A46258C594400D4C908 /* AnimationExtensions.swift */,
+				F3613A4F258C8C0000D4C908 /* UIView+Ripple.swift */,
 			);
 			path = SupportingClasses;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				F310AFD62583018B00B1B8FC /* AppDelegate.swift in Sources */,
 				F310AFD82583018B00B1B8FC /* SceneDelegate.swift in Sources */,
 				F3613A47258C594400D4C908 /* AnimationExtensions.swift in Sources */,
+				F3613A50258C8C0000D4C908 /* UIView+Ripple.swift in Sources */,
 				F3613A3E258BEEAA00D4C908 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

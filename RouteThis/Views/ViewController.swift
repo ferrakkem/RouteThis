@@ -10,8 +10,11 @@
 import UIKit
 import SSSpinnerButton
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,CAAnimationDelegate {
     
+    var ripple:Ripple!
+    
+    @IBOutlet weak var animateView: UIView!
     var customButton = CustomButton()
     @IBOutlet weak var informationView: UIView!
     @IBOutlet weak var ping: UILabel!
@@ -31,9 +34,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         customButton.customBtn(userBtn: startBtn)
         arrowImage.isHidden = true
-        
         ping.isHidden = true
-        
+
     }
     
     
@@ -58,6 +60,7 @@ class ViewController: UIViewController {
                         self.arrowImage.image = UIImage(systemName: K.imageNameForCheckingUploadSpeed)
                         self.stopBtnAnimation()
                         self.uploadLoadinSpeedMessaure(to:endValue)
+                        self.ripple(rippleColor: K.BandColors.imageTintColorDuringUpSpeed)
                     }
                 }
             }
@@ -66,7 +69,7 @@ class ViewController: UIViewController {
     
     //MARK: - Strat Uploading Speed Messaure
     func uploadLoadinSpeedMessaure(to endValue: Int) {
-        let duration: Double = 2.0 //seconds
+        let duration: Double = 3.0 //seconds
         DispatchQueue.global().async {
             for i in stride(from: endValue, to: 64, by: -1) {
                 let sleepTime = UInt32(duration/Double(endValue) * 1000000.0)
@@ -87,6 +90,16 @@ class ViewController: UIViewController {
     @IBAction func StartBtnPressed(_ sender: UIButton) {
         print("start Btn Pressed")
         startBtnAnimation()
+        ripple(rippleColor: K.BandColors.imageTintColorDuringDownloadSpeed)
+    }
+    
+    //MARK: - Riipl
+    func ripple(rippleColor: UIColor ){
+        print("ripple")
+        arrowImage.addRippleAnimation(color: rippleColor , duration: 3, rippleCount: 3, rippleDistance: nil, startReset: true, handler: { animation in
+            animation.delegate = self
+        })
+        
     }
     
     //MARK: - Button chasing animation

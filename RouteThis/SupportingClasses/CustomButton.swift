@@ -25,5 +25,14 @@ class CustomButton: UIButton {
         userBtn.layer.cornerRadius = userBtn.frame.size.height/2
         userBtn.layer.borderWidth = 0.5
     }
+    
+    func rippleD(userBtn: UIButton){
+        
+        
+        userBtn.layer.shadowColor = UIColor.white.cgColor
+        userBtn.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        
+    }
+    
 }
 

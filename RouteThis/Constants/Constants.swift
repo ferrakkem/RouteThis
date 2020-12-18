@@ -36,11 +36,3 @@ extension UIColor {
                   alpha: alpha)}
 }
 
-
-extension UINavigationController {
-  static public func navBarHeight() -> CGFloat {
-    let nVc = UINavigationController(rootViewController: UIViewController(nibName: nil, bundle: nil))
-    let navBarHeight = nVc.navigationBar.frame.size.height
-    return navBarHeight
-  }
-}

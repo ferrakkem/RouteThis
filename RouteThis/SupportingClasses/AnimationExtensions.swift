@@ -34,7 +34,7 @@ extension UIView{
     func move() {
       UIView.animate(withDuration: 2, delay: 1, options: [.curveEaseOut],
                      animations: {
-                        self.frame.origin.y = self.bounds.height + 10
+                        self.frame.origin.y = UINavigationController.navBarHeight() + 30
       }, completion: nil)
     }
     
@@ -59,4 +59,14 @@ extension UILabel{
     }
 }
 
+extension UINavigationController {
+  static public func navBarHeight() -> CGFloat {
+    let nVc = UINavigationController(rootViewController: UIViewController(nibName: "Main", bundle: nil))
+    let navBarHeight = nVc.navigationBar.frame.size.height
+    return navBarHeight
+  }
+}
 
+extension UIImageView{
+
+}
