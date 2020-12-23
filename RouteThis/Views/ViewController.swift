@@ -35,9 +35,8 @@ class ViewController: UIViewController {
     
     //MARK: - Strat dowloading Speed Messaure
     func dowloadingSpeedMessaure(to endValue: Int) {
+        self.pingInfoView.move()
         informationView.animOut()
-        pingInfoView.move()
-        
         let duration: Double = 3.0 //seconds
         DispatchQueue.global().async {
             for i in 0 ..< (endValue + 1) {
@@ -117,8 +116,6 @@ class ViewController: UIViewController {
         }
     }
 }
-
-
 //MARK: - For Ripple class
 extension UIViewController: CAAnimationDelegate{
     

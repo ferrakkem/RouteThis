@@ -34,7 +34,7 @@ extension UIView{
     func move() {
         UIView.animate(withDuration: 2, delay: 1, options: [.curveEaseInOut],
                      animations: {
-                        self.frame.origin.y = 0
+                        self.frame.origin.y = UINavigationController.navBarHeight() + 5
       }, completion: nil)
     }
     
