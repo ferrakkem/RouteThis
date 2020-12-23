@@ -5,19 +5,14 @@
 //  Created by Ferrakkem Bhuiyan on 2020-12-10.
 //
 
-//self.speedTestGrapView.frame = CGRect(x: 0, y: 0, width: K.iPhoneScreen.screenWidth, height: K.iPhoneScreen.screenHeight)
 
 import UIKit
 import SSSpinnerButton
 
-class ViewController: UIViewController,CAAnimationDelegate {
+class ViewController: UIViewController {
     
-    var ripple:Ripple!
-    
-    @IBOutlet weak var animateView: UIView!
     var customButton = CustomButton()
     @IBOutlet weak var informationView: UIView!
-    @IBOutlet weak var ping: UILabel!
     
     @IBOutlet weak var speedCountingLabel: UILabel!
     @IBOutlet weak var downloadSpeedLabel: UILabel!
@@ -27,25 +22,21 @@ class ViewController: UIViewController,CAAnimationDelegate {
     @IBOutlet weak var speedTestGrapView: UIView!
     
     @IBOutlet weak var topSpeedCountingView: UIView!
-    
     @IBOutlet weak var pingInfoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         customButton.customBtn(userBtn: startBtn)
         arrowImage.isHidden = true
-        ping.isHidden = true
-
+        
+        print("Running on: \(UIDevice().type)")
     }
     
     
     //MARK: - Strat dowloading Speed Messaure
     func dowloadingSpeedMessaure(to endValue: Int) {
         informationView.animOut()
-        //pingInfoView.nanimOut()
-        ping.isHidden = false
         pingInfoView.move()
-        //pingInfoView.tanimOut()
         
         let duration: Double = 3.0 //seconds
         DispatchQueue.global().async {
@@ -86,6 +77,7 @@ class ViewController: UIViewController,CAAnimationDelegate {
             }
         }
     }
+    
     //MARK: - StartBtnPressed
     @IBAction func StartBtnPressed(_ sender: UIButton) {
         print("start Btn Pressed")
@@ -93,7 +85,7 @@ class ViewController: UIViewController,CAAnimationDelegate {
         ripple(rippleColor: K.BandColors.imageTintColorDuringDownloadSpeed)
     }
     
-    //MARK: - Riipl
+    //MARK: - Ripple
     func ripple(rippleColor: UIColor ){
         print("ripple")
         arrowImage.addRippleAnimation(color: rippleColor , duration: 3, rippleCount: 3, rippleDistance: nil, startReset: true, handler: { animation in
@@ -124,4 +116,10 @@ class ViewController: UIViewController,CAAnimationDelegate {
             self.startBtn.isEnabled = true
         }
     }
+}
+
+
+//MARK: - For Ripple class
+extension UIViewController: CAAnimationDelegate{
+    
 }

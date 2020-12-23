@@ -32,16 +32,16 @@ extension UIView{
     
     
     func move() {
-      UIView.animate(withDuration: 2, delay: 1, options: [.curveEaseOut],
+        UIView.animate(withDuration: 2, delay: 1, options: [.curveEaseInOut],
                      animations: {
-                        self.frame.origin.y = UINavigationController.navBarHeight() + 30
+                        self.frame.origin.y = 0
       }, completion: nil)
     }
     
     func moveback() {
       UIView.animate(withDuration: 2, delay: 1, options: [.curveEaseOut],
                      animations: {
-                        self.frame.origin.y = 0
+                        self.frame.origin.y -=  self.bounds.height
       }, completion: nil)
     }
 }
@@ -61,7 +61,7 @@ extension UILabel{
 
 extension UINavigationController {
   static public func navBarHeight() -> CGFloat {
-    let nVc = UINavigationController(rootViewController: UIViewController(nibName: "Main", bundle: nil))
+    let nVc = UINavigationController(rootViewController: UIViewController(nibName: nil, bundle: nil))
     let navBarHeight = nVc.navigationBar.frame.size.height
     return navBarHeight
   }
